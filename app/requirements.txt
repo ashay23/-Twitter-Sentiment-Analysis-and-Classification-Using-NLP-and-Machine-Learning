@@ -1,5 +1,0 @@
-pyspark
-pandas
-streamlit
-nltk
-scikit-learn==1.5.1
