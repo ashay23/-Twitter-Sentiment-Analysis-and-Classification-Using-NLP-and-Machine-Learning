@@ -5,6 +5,6 @@ colorFrom: pink
 colorTo: yellow
 sdk: streamlit
 sdk_version: 1.41.1
-app_file: app.py
+app_file: main.py
 pinned: false
 ---
