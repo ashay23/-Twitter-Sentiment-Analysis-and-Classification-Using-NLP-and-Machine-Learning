@@ -1,6 +1,6 @@
 ---
 title: Twitter Sentiment Analysis
-emoji: 🐨
+emoji: 🤗
 colorFrom: pink
 colorTo: yellow
 sdk: streamlit
