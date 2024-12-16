@@ -93,7 +93,7 @@ def validate_csv_file(df):
     return True
 
 def main():
-    st.title("Text Processing and Classification")
+    st.title("Twitter Sentiment Analysis")
     
     # Model loading
     try:
