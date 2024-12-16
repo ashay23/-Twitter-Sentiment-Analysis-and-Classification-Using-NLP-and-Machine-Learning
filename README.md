@@ -1,8 +1,8 @@
 ---
 title: Twitter Sentiment Analysis
-emoji: 🤗
-colorFrom: pink
-colorTo: yellow
+emoji: 📊
+colorFrom: blue
+colorTo: indigo
 sdk: streamlit
 sdk_version: 1.41.1
 app_file: app.py
