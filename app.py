@@ -97,7 +97,7 @@ def main():
     
     # Model loading
     try:
-        with open('vectorization_model_pipeline_1.pkl', 'rb') as file:
+        with open('model.pkl', 'rb') as file:
             pipeline = pickle.load(file)
     except Exception as e:
         st.error(f"Error loading model pipeline: {e}")
