@@ -7,14 +7,13 @@ WORKDIR /app
 # Copy the requirements file into the container
 COPY requirements.txt .
 
-# Install the Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Install the Python dependencies and download NLTK data
+RUN python -m pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt && \
+    python -m nltk.downloader wordnet omw-1.4 stopwords punkt punkt_tab
 
 # Copy the rest of the application files into the container
 COPY . .
-
-# Download necessary NLTK data
-RUN python -m nltk.downloader wordnet omw-1.4 stopwords punkt punkt_tab
 
 # Expose the port Streamlit uses
 EXPOSE 8501
