@@ -20,4 +20,4 @@ RUN python -m nltk.downloader wordnet omw-1.4 stopwords punkt punkt_tab
 EXPOSE 8501
 
 # Command to run the Streamlit app
-CMD ["streamlit", "run", "main.py"]
+CMD ["streamlit", "run", "app.py"]
