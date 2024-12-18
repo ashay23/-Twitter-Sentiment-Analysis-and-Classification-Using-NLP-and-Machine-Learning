@@ -1,20 +1,29 @@
+# Workflow to sync updates to the Hugging Face hub
 name: Sync to Hugging Face hub
+
 on:
+  # Trigger the workflow on push to the 'main' branch
   push:
     branches: [main]
 
-  # to run this workflow manually from the Actions tab
+  # Allow manual triggering from the GitHub Actions tab
   workflow_dispatch:
 
 jobs:
   sync-to-hub:
+    # The job will run on an Ubuntu machine
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Check out the code from the repository
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          lfs: true
-      - name: Push to hub
+          fetch-depth: 0        # Fetch all commit history (not just the latest)
+          lfs: true              # Ensure large files are fetched
+
+      # Step 2: Push the updated code to Hugging Face
+      - name: Push to Hugging Face Hub
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}  # Use the Hugging Face token stored in GitHub Secrets for authentication
+        # Push the code to the Hugging Face Space, overwriting the existing code
         run: git push --force https://ashay23:$HF_TOKEN@huggingface.co/spaces/ashay23/twitter-sentiment-analysis main
